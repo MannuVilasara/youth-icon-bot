@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "youth-icon-bot"
+version = "0.1.0"
+description = "A discord bot (youth-icon)"
+authors = ["Mannu <mannuvilasara@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "youth_icon_bot"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+discord = "^2.3.2"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
