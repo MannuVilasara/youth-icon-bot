@@ -11,17 +11,20 @@ class Bot(commands.Bot):
         )
 
     async def on_ready(self):
-        await load()
+        pass
 
 
 bot = Bot()
 
 
-async def load():
-    for fn in os.listdir("bot/cogs"):
+@bot.event
+async def on_ready():
+    for fn in os.listdir("bot/cogs/"):
         if fn.endswith(".py"):
             await bot.load_extension(f"cogs.{fn[:-3]}")
+    await bot.tree.sync()
+    print("Hey")
 
 
 if __name__ == "__main__":
-    bot.start(token=TOKEN)
+    bot.run(token=TOKEN)
